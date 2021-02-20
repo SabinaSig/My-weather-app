@@ -1,0 +1,42 @@
+h1 {
+  text-align: center;
+  margin: 40px 10px;
+  border: 1px solid black;
+  padding: 20px 10px;
+}
+
+h2 {
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px 2px;
+}
+
+form {
+  text-align: center;
+}
+
+.container {
+  font-family: "Fraunces", serif;
+}
+
+.currentCity {
+  font-size: 180%;
+}
+.currentTemperature {
+  font-size: 180%;
+}
+
+.col-6 {
+  text-align: center;
+}
+
+.buildPage {
+  text-align: center;
+  font-size: small;
+  color: grey;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.city {
+  margin: 50px 0;
+}
