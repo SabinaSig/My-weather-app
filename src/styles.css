@@ -1,3 +1,8 @@
+body {
+  font-family: "Fraunces", serif;
+  background-image: url("https://images.pexels.com/photos/810890/nature-night-sky-milky-way-810890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
 h1 {
   text-align: center;
   margin: 40px 10px;
@@ -16,10 +21,26 @@ h2 {
 
 form {
   text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 
 .container {
-  font-family: "Fraunces", serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-image: url("https://images.pexels.com/photos/569418/pexels-photo-569418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+.app {
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.849) 100%,
+    #212120c6 100%
+  );
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
 .currentCity {
