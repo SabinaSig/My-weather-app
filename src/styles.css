@@ -1,22 +1,28 @@
 body {
   font-family: "Fraunces", serif;
+  color: #212629;
   background-image: url("https://images.pexels.com/photos/810890/nature-night-sky-milky-way-810890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
 
 h1 {
   text-align: center;
-  margin: 40px 10px;
-  border: 1px solid black;
+  color: #dbdcde;
+  margin: 20px 10px;
+  border: 1px solid #dbdcde;
   padding: 20px 10px;
   border-radius: 10px;
+  background: #3e8bb4;
 }
 
 h2 {
   text-align: center;
-  border: 1px solid black;
-  margin: 40px 10px;
-  padding: 5px 2px;
+  font-size: 20px;
+  color: #7090a6;
+  border: 1px solid #dbdcde;
+  padding: 10px 5px;
   border-radius: 10px;
+  background: #b1cbd7;
+  margin: 10px 10px;
 }
 
 form {
@@ -61,6 +67,7 @@ form {
   font-family: "Courier New", Courier, monospace;
 }
 
-.city {
+#city {
   margin: 50px 0;
+  padding: 10px 10px;
 }

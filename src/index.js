@@ -30,6 +30,7 @@ function submitCity(event) {
 
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", submitCity);
+
 //weather API
 function search(city) {
   let apiKey = "572e5efa40a6e4f550d450618c4881bf";
