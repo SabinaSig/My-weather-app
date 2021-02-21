@@ -1,7 +1,5 @@
 body {
   font-family: "Fraunces", serif;
-  color: #212629;
-  background-image: url("https://images.pexels.com/photos/810890/nature-night-sky-milky-way-810890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
 }
 
 h1 {
@@ -29,6 +27,24 @@ form {
   text-align: center;
   display: block;
   margin: 0 auto;
+}
+
+button {
+  border: none;
+  background: transparent;
+  color: #7090a6;
+}
+
+ul {
+  text-decoration: none;
+  font-size: 80%;
+  text-align: left;
+  list-style: none;
+}
+
+#change {
+  font-size: 90%;
+  color: #7090a6;
 }
 
 .container {
