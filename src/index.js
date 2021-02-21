@@ -42,7 +42,7 @@ function showWeather(response) {
   document.querySelector(".currentTemperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("#city").innerHTML = response.data.weather[0].main;
+  document.querySelector(".currentState").innerHTML = response.data.weather[0].main;
 }
 //Current location
 function searchLocation(position) {
