@@ -31,6 +31,31 @@ function submitCity(event) {
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", submitCity);
 
+//Change degrees
+function convertCelsius(event) {
+  event.preventDefault();
+  let tempretureElement = document.querySelector("#currentTemperature");
+  let tempreture = tempretureElement.innerHTML;
+  tempretureElement.innerHTML = Math.round(((tempreture - 32) * 5) / 9);
+  let showDegree = document.querySelector("#degree");
+  showDegree.innerHTML = "°C";
+}
+
+function convertFahrenheit(event) {
+  event.preventDefault();
+  let tempretureElement = document.querySelector("#currentTemperature");
+  let tempreture = tempretureElement.innerHTML;
+  tempretureElement.innerHTML = Math.round((tempreture * 9) / 5 + 32);
+  let showDegree = document.querySelector("#degree");
+  showDegree.innerHTML = "°F";
+}
+
+let celsuius = document.querySelector("#celsius");
+celsuius.addEventListener("click", convertCelsius);
+
+let fahrenheit = document.querySelector("#farenheit");
+fahrenheit.addEventListener("click", convertFahrenheit);
+
 //weather API
 function search(city) {
   let apiKey = "572e5efa40a6e4f550d450618c4881bf";
@@ -39,13 +64,18 @@ function search(city) {
 }
 function showWeather(response) {
   document.querySelector(".currentCity").innerHTML = response.data.name;
-  document.querySelector(".currentTemperature").innerHTML = Math.round(
+  document.querySelector("#currentTemperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector(".currentState").innerHTML = response.data.weather[0].main;
+  document.querySelector(".currentState").innerHTML =
+    response.data.weather[0].main;
+  document.querySelector(" #pressure ").innerHTML = response.data.main.pressure;
+  document.querySelector(" #humidity ").innerHTML = response.data.main.humidity;
+  document.querySelector(" #wind ").innerHTML = response.data.wind.speed;
 }
 //Current location
 function searchLocation(position) {
+  console.log(position);
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "572e5efa40a6e4f550d450618c4881bf";
@@ -57,5 +87,6 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);

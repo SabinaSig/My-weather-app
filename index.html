@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles.css" />
-    <script src="src/index.js"></script>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -35,17 +35,22 @@
                             <strong> Copenhagen </strong>
 
 
-                        <p class="currentTemperature">
-                            <strong> 25 </strong>
-                            <button id="celsius"> °C </button>
+                        <p>
+                            <strong id="currentTemperature"> 25 </strong>
+                            <span id=degree> °C <span>
+                        </p>
+
 
                         <p class="currentState">
                         <ul>
 
-                            <li id="Pressure">Pressure: 1023 hPa</li>
-                            <li id="Humidity"> Humidity: 84%</li>
-                            <li id="Wind"> Wind : 35m/s
-                            </li>
+                            <li> <strong> Pressure: (hPa) </strong> </li>
+                            <li id="pressure"> 1023 </li>
+                            <li> <strong> Humidity (%): </strong> </li>
+                            <li id="humidity"> 84 </li>
+                            <li> <strong> Wind (m/s): </strong> </li>
+                            <li id="wind"> 35 </li>
+
 
                         </ul>
 
@@ -53,9 +58,10 @@
 
 
                         <p id="change"> Change to
-                            <button id="farenheit"> °F </button>
+                            <button id="farenheit"> °F </button> |
+                            <button id="celsius"> °C </button>
                         </p>
-                        </p>
+
                         </p>
                     </div>
                 </div>
@@ -102,6 +108,7 @@
             </p>
         </div>
     </div>
+    <script src="src/index.js"></script>
 </body>
 
 </html>
