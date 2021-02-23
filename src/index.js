@@ -60,8 +60,12 @@ fahrenheit.addEventListener("click", convertFahrenheit);
 function search(city) {
   let apiKey = "572e5efa40a6e4f550d450618c4881bf";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
+
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
 }
+
+let iconElement = document.querySelector("#icon");
+
 function showWeather(response) {
   document.querySelector(".currentCity").innerHTML = response.data.name;
   document.querySelector("#currentTemperature").innerHTML = Math.round(
@@ -72,6 +76,10 @@ function showWeather(response) {
   document.querySelector(" #pressure ").innerHTML = response.data.main.pressure;
   document.querySelector(" #humidity ").innerHTML = response.data.main.humidity;
   document.querySelector(" #wind ").innerHTML = response.data.wind.speed;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 //Current location
 function searchLocation(position) {
