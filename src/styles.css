@@ -68,10 +68,12 @@ ul {
 .currentCity {
   font-size: 180%;
 }
-.currentTemperature {
+#currentTemperature {
   font-size: 180%;
 }
-
+#degree {
+  font-size: 180%;
+}
 .col-6 {
   text-align: center;
 }
