@@ -62,6 +62,9 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 let iconElement = document.querySelector("#icon");
@@ -98,3 +101,42 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+//Forecats
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let currentHour = date.getHours();
+  let currentMinutes = date.getMinutes();
+  return `${currentHour} : ${currentMinutes}`;
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    let forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-6"> 
+      <hr>
+      <p>
+       ${formatHours(forecast.dt * 1000)}
+      </p>
+      <br />
+      <img 
+      src="http://openweathermap.org/img/wn/${
+        forecast.weather[0].icon
+      }@2x.png" /> 
+      <div class="weather-forecast-temperature">
+        <strong> 
+          ${Math.round(forecast.main.temp_max)}°C
+        </strong> 
+      </div>
+      <br />
+      <hr>         
+    </div>
+`;
+  }
+}
