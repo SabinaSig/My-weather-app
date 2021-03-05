@@ -2,7 +2,13 @@
 function currentDate(timestamp) {
   let date = new Date(timestamp);
   let currentHour = date.getHours();
+  if (currentHour < 10) {
+    currentHour = `0${currentHour}`;
+  }
   let currentMinutes = date.getMinutes();
+  if (currentMinutes < 10) {
+    currentMinutes = `0${currentMinutes}`;
+  }
   let days = [
     "Sunday",
     "Monday",
@@ -26,6 +32,8 @@ function submitCity(event) {
   let searchedCity = document.querySelector(".currentCity");
   searchedCity.innerHTML = `${searchCity.value}`;
   search(searchCity.value);
+  let h3 = document.querySelector("h3");
+  h3.innerHTML = `Forecast for next hours in ${searchCity.value}`;
 }
 
 let form = document.querySelector("#city-form");
@@ -81,7 +89,7 @@ function showWeather(response) {
   document.querySelector(" #wind ").innerHTML = response.data.wind.speed;
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    "http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png"
   );
 }
 //Current location
@@ -102,12 +110,18 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-//Forecats
+//Forecast
 
 function formatHours(timestamp) {
   let date = new Date(timestamp);
   let currentHour = date.getHours();
+  if (currentHour < 10) {
+    currentHour = `0${currentHour}`;
+  }
   let currentMinutes = date.getMinutes();
+  if (currentMinutes < 10) {
+    currentMinutes = `0${currentMinutes}`;
+  }
   return `${currentHour} : ${currentMinutes}`;
 }
 
@@ -116,16 +130,16 @@ function displayForecast(response) {
   forecastElement.innerHTML = null;
   let forecast = null;
 
-  for (let index = 0; index < 6; index++) {
+  for (let index = 0; index < 5; index++) {
     let forecast = response.data.list[index];
     forecastElement.innerHTML += `
-    <div class="col-6"> 
-      <hr>
-      <p>
+
+    <div class="col-2" id = "hourForecast"> 
+    <br> 
+      <p id = "nextHours">
        ${formatHours(forecast.dt * 1000)}
       </p>
-      <br />
-      <img 
+      <img id = "forecastIcon"
       src="http://openweathermap.org/img/wn/${
         forecast.weather[0].icon
       }@2x.png" /> 
@@ -133,10 +147,9 @@ function displayForecast(response) {
         <strong> 
           ${Math.round(forecast.main.temp_max)}°C
         </strong> 
-      </div>
-      <br />
-      <hr>         
-    </div>
-`;
+        <br> 
+        <br>
+        <br> 
+      </div>`;
   }
 }
