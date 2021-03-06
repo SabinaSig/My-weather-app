@@ -16,12 +16,12 @@
     <script src="https://kit.fontawesome.com/b188db3054.js" crossorigin="anonymous"></script>
     <title> Weather App</title>
 </head>
-
+ 
 <body>
     <div class="container">
         <div class="app">
             <h1>
-                Weather App
+                    Weather App
             </h1>
             <h2>
                 Date
@@ -29,73 +29,68 @@
             <div class="row">
                 <div class="col-12" id="city">
                     <div id="current">
-                        <p class="currentCity">
-                            <span> <img id="icon" src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="clear">
-                            </span>
-                            <br>
-                            <strong> Copenhagen </strong>
-
-
                         <p>
-                            <strong id="currentTemperature"> 25 </strong>
-                            <span id=degree> °C <span>
-                        </p>
+                            <span > <img id ="icon" src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="clear" > </span>
+                            <br>
+                            <strong  class="currentCity"> Copenhagen </strong>
+        
+                        <p >
+                            <strong id ="currentTemperature"> 25 </strong> 
+                            <span id= degree > °C  <span>
+                        </p> 
+                        
+                    
+                            <p class= "currentState"> 
+                                <ul>
+                                
+                                    <li> <strong> Pressure: (hPa)  </strong> </li> <li id="pressure"> 1023 </li> 
+                                    <li> <strong> Humidity (%): </strong> </li> <li id="humidity"> 84 </li>
+                                    <li> <strong> Wind (m/s): </strong> </li> <li id="wind"> 35 </li>
 
 
-                        <p class="currentState">
-                        <ul>
+                                </ul> 
 
-                            <li> <strong> Pressure: (hPa) </strong> </li>
-                            <li id="pressure"> 1023 </li>
-                            <li> <strong> Humidity (%): </strong> </li>
-                            <li id="humidity"> 84 </li>
-                            <li> <strong> Wind (m/s): </strong> </li>
-                            <li id="wind"> 35 </li>
+                            </p>
+                        
 
-
-                        </ul>
-
-                        </p>
-
-
-                        <p id="change"> Change to
-                            <button id="farenheit"> °F </button> |
-                            <button id="celsius"> °C </button>
-                        </p>
-
+                            <p id="change"> Change to 
+                            <button id = "farenheit"> °F </button> |
+                            <button id = "celsius"> °C </button> 
+                            </p>
+                
                         </p>
                     </div>
                 </div>
                 <h3> </h3>
-                <div id="forecast">
-
+                <div  id= "forecast">
+                    
                 </div>
 
-                <form id="city-form">
-                    <input type="text" id="city-input" placeholder="Enter a city" autocomplete="off" />
-                    <input type="submit" class="btn btn-dark" value="Search a city" />
-                    <button id="current-location-button" type="button" class="btn btn-dark">Current location</button>
+            <form id="city-form">
+                <input type="text" id="city-input" placeholder="Enter a city" autocomplete="off" />
+                <input type="submit" class="btn btn-dark" value="Search a city" />
+                <button id="current-location-button" type="button" class="btn btn-dark">Current location</button>
 
-                </form>
+            </form>
 
+            <br>
+            <br>
+            <br>
+            <hr />
+            <p class="buildPage">
+                This page was built by 👩🏼‍💻
+                <a href="https://www.linkedin.com/in/sabina-sigmundov%C3%A1-431324194/" target="_">
+                    Sabina Sigmundová
+                </a>
                 <br>
-                <br>
-                <br>
-                <hr />
-                <p class="buildPage">
-                    This page was built by 👩🏼‍💻
-                    <a href="https://www.linkedin.com/in/sabina-sigmundov%C3%A1-431324194/" target="_">
-                        Sabina Sigmundová
-                    </a>
-                    <br>
-                    <a href="https://github.com/SabinaSig/My-weather-app" target="_">
-                        Open-source code
-                    </a>
+                <a href="https://github.com/SabinaSig/My-weather-app" target="_">
+                    Open-source code 
+                </a>
 
-                </p>
-            </div>
+            </p>
         </div>
-        <script src="src/index.js"></script>
+    </div>
+    <script src="src/index.js"></script>
 </body>
 
 </html>

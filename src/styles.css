@@ -64,9 +64,11 @@ ul {
 
 #forecast {
   text-align: center;
-  border: 0;
-  padding: 0;
-  margin: 0;
+  background: #c7dde7;
+  border: 1px solid #dbdcde;
+  padding: 10px 5px;
+  border-radius: 10px;
+  margin: 10px 10px;
 }
 
 #hourForecast {
@@ -149,4 +151,12 @@ ul {
 #city {
   margin: 50px 0;
   padding: 10px 10px;
+}
+
+#current {
+  background: #c7dde7;
+  border: 1px solid #dbdcde;
+  padding: 10px 5px;
+  border-radius: 10px;
+  margin: 10px 10px;
 }
